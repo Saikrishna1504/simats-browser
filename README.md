@@ -1,5 +1,7 @@
 # SIMATS Secure Exam Browser (Linux & Windows)
 
+> **Unofficial / Reverse-Engineered Port:** This project is an unofficial reverse-engineered reconstruction of the Windows-only SIMATS Browser (`0.1.0`) built to add native Linux support. It is not affiliated with or officially endorsed by SIMATS / Saveetha.
+
 Cross-platform Tauri 2 build of SIMATS Secure Exam Browser with native Linux support (X11 & Wayland) and full Windows parity.
 
 ## Quick Build & Install (Any Linux)
