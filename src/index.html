@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Exam Browser</title>
+    <!-- Using Google Fonts matching previous UI designs -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script type="module" src="/main.js" defer=""></script>
+  </head>
+  <body>
+    <!-- Setup / Initial Screen -->
+    <main id="setup-screen" class="splash-screen">
+      <div class="splash-card">
+        <!-- Logo / Icon -->
+        <div class="splash-logo">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="56" height="56" rx="16" fill="#4f46e5"></rect>
+            <path d="M14 28C14 20.268 20.268 14 28 14s14 6.268 14 14-6.268 14-14 14S14 35.732 14 28z" stroke="white" stroke-width="2.5" fill="none"></path>
+            <path d="M22 28l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+
+        <h1 class="splash-title">SIMATS Secure Browser</h1>
+        <p class="splash-subtitle">Examination Portal</p>
+
+        <!-- Step indicators -->
+        <div class="splash-steps">
+          <div class="step" id="step-1">
+            <div class="step-dot"></div>
+            <span>Connecting to server</span>
+          </div>
+          <div class="step" id="step-2">
+            <div class="step-dot"></div>
+            <span>Verifying session</span>
+          </div>
+          <div class="step" id="step-3">
+            <div class="step-dot"></div>
+            <span>Loading exam</span>
+          </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p class="progress-label" id="progress-label">Initializing...</p>
+
+        <p id="error-msg" class="error"></p>
+        <button id="startup-exit-btn" class="btn startup-exit-btn hidden">Exit Browser</button>
+      </div>
+
+      <!-- Background decoration -->
+      <div class="splash-blob blob-1"></div>
+      <div class="splash-blob blob-2"></div>
+    </main>
+
+    <!-- Browser View -->
+    <div id="browser-view" class="hidden">
+      <!-- Page loading overlay shown while iframe content is loading -->
+      <div id="page-loader" class="page-loader">
+        <div class="page-loader-inner">
+          <div class="loader-ring"></div>
+          <p class="loader-text">Loading exam page...</p>
+          <div class="loader-bar-track">
+            <div class="loader-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <iframe id="exam-frame" src="about:blank" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-modals allow-fullscreen" allow="camera; microphone; fullscreen; autoplay"></iframe>
+      
+      <!-- Overlay controls for Secure Exit -->
+      <button id="exit-btn" class="btn floating-danger">Secure Exit</button>
+    </div>
+
+    <!-- Exit Password Modal -->
+    <div id="exit-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Secure Coordinator Exit</h2>
+        <p>Enter the invigilator password to close the exam browser.</p>
+        <input type="password" id="exit-password" placeholder="Password">
+        <div class="modal-actions">
+          <button id="cancel-exit" class="btn secondary">Cancel</button>
+          <button id="confirm-exit" class="btn danger">Exit App</button>
+        </div>
+        <p id="exit-error" class="error"></p>
+      </div>
+    </div>
+  
+
+</body></html>

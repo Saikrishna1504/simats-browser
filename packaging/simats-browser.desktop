@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=SIMATS Browser
+GenericName=Secure Exam Browser
+Comment=SIMATS Secure Examination Browser
+Exec=simats-browser
+Icon=simats-browser
+Terminal=false
+Categories=Education;Network;WebBrowser;
+StartupWMClass=simats-browser
+Keywords=simats;exam;browser;saveetha;

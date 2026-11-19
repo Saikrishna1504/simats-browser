@@ -1,0 +1,14 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Local splash screen capability for SIMATS Secure Exam Browser",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "opener:default",
+    "allow-fetch-exam-url",
+    "allow-verify-exit-password",
+    "allow-get-device-id",
+    "allow-secure-exit"
+  ]
+}
